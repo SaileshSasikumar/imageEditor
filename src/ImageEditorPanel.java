@@ -13,7 +13,6 @@ public class ImageEditorPanel extends JPanel implements KeyListener{
     public ImageEditorPanel() {
         BufferedImage imageIn = null;
         try {
-            // the image should be in the main project folder, not in \src or \bin
             imageIn = ImageIO.read(new File("funnydog.jpg"));
         } catch (IOException e) {
             System.out.println(e);
@@ -26,7 +25,6 @@ public class ImageEditorPanel extends JPanel implements KeyListener{
     }
 
     public void paintComponent(Graphics g) {
-        // paints the array pixels onto the screen
         for (int row = 0; row < pixels.length; row++) {
             for (int col = 0; col < pixels[0].length; col++) {
                 g.setColor(pixels[row][col]);
@@ -36,10 +34,6 @@ public class ImageEditorPanel extends JPanel implements KeyListener{
     }
 
     public void run() {
-        // call your image-processing methods here OR call them from keyboard event
-        // handling methods
-        // write image-processing methods as pure functions - for example: pixels =
-        // flip(pixels);
         repaint();
     }
 
@@ -71,33 +65,37 @@ public class ImageEditorPanel extends JPanel implements KeyListener{
     }
 
     public static int getYellowDiff(Color yellow, Color temp){
-        double redDiff = Math.pow((yellow.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((yellow.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((yellow.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((yellow.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((yellow.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((yellow.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
 
     public static int getBlueDiff(Color blue, Color temp){
-        double redDiff = Math.pow((blue.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((blue.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((blue.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((blue.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((blue.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((blue.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
 
     public static int getGreenDiff(Color green, Color temp){
-        double redDiff = Math.pow((green.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((green.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((green.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((green.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((green.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((green.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
 
     public static int getRedDiff(Color red, Color temp){
-        double redDiff = Math.pow((red.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((red.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((red.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((red.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((red.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((red.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
@@ -172,49 +170,55 @@ public class ImageEditorPanel extends JPanel implements KeyListener{
     }
 
     public static int getGoldDiff(Color harmoniousGold, Color temp){
-        double redDiff = Math.pow((harmoniousGold.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((harmoniousGold.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((harmoniousGold.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((harmoniousGold.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((harmoniousGold.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((harmoniousGold.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
 
     public static int getBrownDiff(Color woodBrown, Color temp){
-        double redDiff = Math.pow((woodBrown.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((woodBrown.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((woodBrown.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((woodBrown.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((woodBrown.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((woodBrown.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
 
     public static int getFairyDiff(Color fairyPrincess, Color temp){
-        double redDiff = Math.pow((fairyPrincess.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((fairyPrincess.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((fairyPrincess.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((fairyPrincess.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((fairyPrincess.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((fairyPrincess.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
 
     public static int getWaxDiff(Color waxDiff, Color temp){
-        double redDiff = Math.pow((waxDiff.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((waxDiff.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((waxDiff.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((waxDiff.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((waxDiff.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((waxDiff.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
 
     public static int getPinkDiff(Color carismaPink, Color temp){
-        double redDiff = Math.pow((carismaPink.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((carismaPink.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((carismaPink.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((carismaPink.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((carismaPink.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((carismaPink.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
 
     public static int getOrangeDiff(Color harvestOrange, Color temp){
-        double redDiff = Math.pow((harvestOrange.getRed() - temp.getRed()), 2);
-        double greenDiff = Math.pow((harvestOrange.getGreen() - temp.getGreen()), 2);
-        double blueDiff = Math.pow((harvestOrange.getBlue() - temp.getBlue()), 2);
+        final int SQUARE_EXPONENT = 2;
+        double redDiff = Math.pow((harvestOrange.getRed() - temp.getRed()), SQUARE_EXPONENT);
+        double greenDiff = Math.pow((harvestOrange.getGreen() - temp.getGreen()), SQUARE_EXPONENT);
+        double blueDiff = Math.pow((harvestOrange.getBlue() - temp.getBlue()), SQUARE_EXPONENT);
         int distance = (int)(Math.sqrt(redDiff + greenDiff + blueDiff));
         return distance;
     }
@@ -261,11 +265,12 @@ public class ImageEditorPanel extends JPanel implements KeyListener{
     }
 
     public static Color [][] grayscale(Color[][] arr){
+        final int NUM_COLORS = 3;
         Color[][] newArr = new Color[arr.length][arr[0].length];
         for (int r = 0; r < newArr.length; r++) {
             for (int c = 0; c < newArr[0].length; c++) {
                 Color tempColor = arr[r][c];
-                int tempVal = (tempColor.getRed() + tempColor.getGreen() + tempColor.getBlue()) / 3;
+                int tempVal = (tempColor.getRed() + tempColor.getGreen() + tempColor.getBlue()) / NUM_COLORS;
                 Color newColor = new Color(tempVal, tempVal, tempVal);
                 newArr[r][c] = newColor;
             }
@@ -307,7 +312,6 @@ public class ImageEditorPanel extends JPanel implements KeyListener{
                 result[row][col] = c;
             }
         }
-        // System.out.println("Loaded image: width: " +width + " height: " + height);
         return result;
     }
 
